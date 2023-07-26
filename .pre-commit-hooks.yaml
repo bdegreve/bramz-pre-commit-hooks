@@ -1,0 +1,6 @@
+- id: bramz-fix-copyright
+  name: Fix Copyright
+  description: This hook add current year to copyright statements.
+  entry: bramz-fix-copyright
+  language: python
+  'types_or': [python, c++, c]
