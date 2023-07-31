@@ -34,8 +34,8 @@ from pathlib import Path
 
 DEFAULT_PREFIX = "Copyright (C)"
 
-SINGLE_YEAR_REGEX = re.compile(br"^\d{4}$")
-YEAR_RANGE_REGEX = re.compile(br"^(?P<begin>\d{4})-(?P<end>\d{4})$")
+SINGLE_YEAR_REGEX = re.compile(rb"^\d{4}$")
+YEAR_RANGE_REGEX = re.compile(rb"^(?P<begin>\d{4})-(?P<end>\d{4})$")
 CURRENT_YEAR = datetime.date.today().year
 
 
