@@ -4,3 +4,10 @@
   entry: bramz-fix-copyright
   language: python
   'types_or': [python, c++, c]
+- id: bramz-check-conan-requires
+  name: Check Conan Requires
+  description: This hook checks if conan requires match allowed patterns.
+  entry: bramz-check-conan-requires
+  language: python
+  types: [python]
+  files: conanfile\.py$
