@@ -9,10 +9,10 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
   - repo: https://github.com/bdegreve/bramz-pre-commit-hooks.git
-    rev: 11b9312f25f34693211b214cc4c910cb1cc7c475
+    rev: babbefa12095ed4ee7270715044148bff66d2735
     hooks:
       - id: bramz-fix-copyright
-        args: [--author=Bram de Greve, --prefix=Copyright]
+        args: [--author=Bram de Greve, --prefix=Copyright, --license-file=LICENSE]
         exclude: ^setup.py$
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0 # keep in sync with dev-constraints.txt
