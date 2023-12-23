@@ -12,7 +12,7 @@ else
 	ENV_PYTHON=env/bin/python
 endif
 
-all: bramz_pre_commit_hooks.egg-info/PKG-INFO
+all: bramz_pre_commit_hooks.egg-info/PKG-INFO format check
 
 bramz_pre_commit_hooks.egg-info/PKG-INFO: env/.dev-requirements.stamp setup.py setup.cfg
 	$(ENV_PYTHON) -m pip install --editable . --constraint dev-constraints.txt
@@ -26,6 +26,18 @@ env/.dev-requirements.stamp: env dev-requirements.txt dev-constraints.txt
 env:
 	$(PYTHON) -m venv env
 
+format: env/.dev-requirements.stamp
+	$(ENV_PYTHON) -m isort bramz_pre_commit_hooks
+	$(ENV_PYTHON) -m black bramz_pre_commit_hooks
+
+check: lint mypy
+
+lint: env/.dev-requirements.stamp
+	$(ENV_PYTHON) -m flake8 bramz_pre_commit_hooks
+
+mypy: env/.dev-requirements.stamp
+	$(ENV_PYTHON) -m mypy bramz_pre_commit_hooks
+
 clean:
 	$(RMRF) bramz_pre_commit_hooks.egg-info
 	$(RMRF) build
@@ -34,4 +46,4 @@ distclean: clean
 	$(RMRF) env
 	$(RMRF) .mypy_cache
 
-.PHONY: all clean distclean
+.PHONY: all format check lint mypy clean distclean

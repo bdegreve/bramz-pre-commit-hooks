@@ -1,2 +1,9 @@
 [build-system]
 requires = ["setuptools>=65.5.0", "wheel"]
+
+[tool.black]
+python_version = "py310"
+
+[tool.isort]
+py_version = "310"
+profile = "black"
