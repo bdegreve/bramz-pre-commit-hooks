@@ -101,7 +101,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--author", required=True)
     parser.add_argument("--dry", action="store_true", default=False)
     parser.add_argument("--prefix", help=f"default: {DEFAULT_PREFIX}")
+    parser.add_argument("--license-file")
     args = parser.parse_args(argv)
+
+    if args.license_file and args.filenames:
+        args.filenames.append(Path(args.license_file))
 
     ret = 0
     for filename in args.filenames:
