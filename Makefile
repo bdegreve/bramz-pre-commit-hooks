@@ -21,6 +21,7 @@ bramz_pre_commit_hooks.egg-info/PKG-INFO: env/.dev-requirements.stamp setup.py s
 env/.dev-requirements.stamp: env dev-requirements.txt dev-constraints.txt
 	$(ENV_PYTHON) -m pip install --upgrade pip setuptools wheel --constraint dev-constraints.txt
 	$(ENV_PYTHON) -m pip install --requirement dev-requirements.txt --constraint dev-constraints.txt
+	$(ENV_PYTHON) -m pre_commit install
 	$(TOUCH) env/.dev-requirements.stamp
 
 env:

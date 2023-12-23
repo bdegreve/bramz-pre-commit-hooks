@@ -1,17 +1,26 @@
 black==23.7.0 # keep in sync with .pre-commit-config.yaml
+cfgv==3.4.0
 click==8.1.6
 colorama==0.4.6
+distlib==0.3.8
+filelock==3.13.1
 flake8==6.1.0 # keep in sync with .pre-commit-config.yaml
+identify==2.5.33
 isort==5.12.0 # keep in sync with .pre-commit-config.yaml
 mccabe==0.7.0
 mypy==1.4.1 # keep in sync with .pre-commit-config.yaml
 mypy-extensions==1.0.0
+nodeenv==1.8.0
 packaging==23.1
 pathspec==0.11.2
 pip==23.2.1
 platformdirs==3.10.0
+pre-commit==3.6.0
 pycodestyle==2.11.0
 pyflakes==3.1.0
+PyYAML==6.0.1
 setuptools==68.0.0
+tomli==2.0.1
 typing_extensions==4.7.1
+virtualenv==20.25.0
 wheel==0.41.0
