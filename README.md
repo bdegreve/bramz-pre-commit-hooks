@@ -7,7 +7,7 @@ Some [pre-commit](https://pre-commit.com/) hooks
 Automatically update copyright years when source files are modified. Currently only
 scans Python, C++ and C files.
 
-It scans for strings like "Copyright 2022-2023 Bram de Greve" in your source code, and
+It scans for strings like "Copyright 2022-2025 Bram de Greve" in your source code, and
 will update the year range to include the current year. If no such string is found,
 this hook will fail, telling you to manually add a copyright line, i.e. it doesn't
 automatically add copyright information if none is there yet.

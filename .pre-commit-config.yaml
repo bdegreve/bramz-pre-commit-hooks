@@ -12,7 +12,7 @@ repos:
     rev: babbefa12095ed4ee7270715044148bff66d2735
     hooks:
       - id: bramz-fix-copyright
-        args: [--author=Bram de Greve, --prefix=Copyright, --license-file=LICENSE]
+        args: [--author=Bram de Greve, --prefix=Copyright, --license-file=LICENSE, --license-file=README.md]
         exclude: ^setup.py$
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0 # keep in sync with dev-constraints.txt

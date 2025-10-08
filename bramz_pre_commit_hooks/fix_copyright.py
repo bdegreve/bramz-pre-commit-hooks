@@ -1,4 +1,4 @@
-# Copyright 2023 Bram de Greve
+# Copyright 2023-2025 Bram de Greve
 #
 # Redistribution and use in source and binary forms, with or without modification, are
 # permitted provided that the following conditions are met:
@@ -101,11 +101,16 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--author", required=True)
     parser.add_argument("--dry", action="store_true", default=False)
     parser.add_argument("--prefix", help=f"default: {DEFAULT_PREFIX}")
-    parser.add_argument("--license-file")
+    parser.add_argument(
+        "--license-file",
+        type=Path,
+        action="append",
+        help="License file that always needs to be updated",
+    )
     args = parser.parse_args(argv)
 
     if args.license_file and args.filenames:
-        args.filenames.append(Path(args.license_file))
+        args.filenames += args.license_file
 
     ret = 0
     for filename in args.filenames:
